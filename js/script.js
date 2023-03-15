@@ -51,12 +51,12 @@ const { createApp } = Vue
             "img/04.webp",
             "img/05.webp"
         ],
-
       }
     },
 
     methods: {
       gotoPrev(){
+        this.activeTitle--;
         this.activeImage--;
         if(this.activeImage < 0){
           this.activeImage = this.slides.length - 1;
