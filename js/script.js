@@ -51,18 +51,38 @@ const { createApp } = Vue
             "img/04.webp",
             "img/05.webp"
         ],
+
+
+        activeTitle: 0,
+
+        titles: [
+             'Marvel\'s Spiderman Miles Morale',
+             'Ratchet & Clank: Rift Apart',
+             'Fortnite',
+             'Stray',
+             'Marvels'
+
+
+        ]
       }
     },
 
     methods: {
       gotoPrev(){
-        
+        this.activeTitle--;
+        if(this.activeTitle < 0){
+          this.activeTitle = this.titles.length - 1;
+        }
         this.activeImage--;
         if(this.activeImage < 0){
           this.activeImage = this.slides.length - 1;
         }
       },
       gotoNext(){
+        this.activeTitle++;
+        if(this.activeTitle == this.titles.length){
+          this.activeTitle = 0;
+        }
         this.activeImage++;
         if(this.activeImage == this.slides.length){
           this.activeImage = 0;
@@ -70,8 +90,10 @@ const { createApp } = Vue
       },
 
       changeImage(newActiveImage){
-        this.activeImage = newActiveImage
+        this.activeImage = newActiveImage;
+        this.activeTitle = newActiveTitle;
       },
+      
 
       getActiveClass(index){
         if(index == this.activeImage){
