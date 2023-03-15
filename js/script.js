@@ -90,8 +90,7 @@ const { createApp } = Vue
       },
 
       changeImage(newActiveImage){
-        this.activeImage = newActiveImage;
-        this.activeTitle = newActiveTitle;
+        this.activeImage = newActiveImage
       },
       
 
