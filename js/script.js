@@ -56,7 +56,7 @@ const { createApp } = Vue
 
     methods: {
       gotoPrev(){
-        this.activeTitle--;
+        
         this.activeImage--;
         if(this.activeImage < 0){
           this.activeImage = this.slides.length - 1;
@@ -78,7 +78,15 @@ const { createApp } = Vue
           return 'active'
         }
         return '';
+      },
+
+      autoplay(){
+        setInterval(this.gotoNext, 3000)
       }
+    },
+
+    mounted(){
+        this.autoplay();
     }
 
   }).mount('#app')
