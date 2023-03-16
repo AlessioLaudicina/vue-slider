@@ -77,20 +77,14 @@ const { createApp } = Vue
     },
     methods: {
       gotoPrev(){
-        this.activeTitle--;
-        if(this.activeTitle < 0){
-          this.activeTitle = this.titles.length - 1;
-        }
+        
         this.activeImage--;
         if(this.activeImage < 0){
           this.activeImage = this.slides.length - 1;
         }
       },
       gotoNext(){
-        this.activeTitle++;
-        if(this.activeTitle == this.titles.length){
-          this.activeTitle = 0;
-        }
+        
         this.activeImage++;
         if(this.activeImage == this.slides.length){
           this.activeImage = 0;
